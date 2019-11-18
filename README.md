@@ -10,15 +10,13 @@ Check the Scrapy homepage at (https://scrapy.org) for more information, includin
 
 ### Usage
 
-`from main import *`
+* `$ py -m pip scrapy crawl link -o link.csv`
 
-to play connect4 with provided model, run the following script from the directory:
+to collect all results link of the research on leboncoin.com and save as csv
 
-`human_play()`
+* `$ py -m pip scrapy crawl data -o data.csv`
 
-to train the provided model for the game connect4, run the following script:
-
-`train()`
+to collect informations of each links and save as csv
 
 ## Acknowledgements
-* [TowardsDataScience](https://towardsdatascience.com/from-scratch-implementation-of-alphazero-for-connect4-f73d4554002a)
+* [Scrapy.org](https://docs.scrapy.org/en/latest/intro/tutorial.html)
