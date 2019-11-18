@@ -6,7 +6,7 @@ Check the Scrapy homepage at (https://scrapy.org) for more information, includin
 
 ## Getting Started
 ### Prerequisites
-* numpy `py -m pip install Scrapy`
+* numpy `$ py -m pip install Scrapy`
 
 ### Usage
 
