@@ -6,17 +6,17 @@ Check the Scrapy homepage at (https://scrapy.org) for more information, includin
 
 ## Getting Started
 ### Prerequisites
-* numpy `$ py -m pip install Scrapy`
+* numpy `$ python -m pip install Scrapy`
 
 ### Usage
 
-* `$ py -m pip scrapy crawl link -o link.csv`
+* `$ python -m pip scrapy crawl link -o link.csv`
 
 to collect all results link of the research on leboncoin.com and save as csv
 
-* `$ py -m pip scrapy crawl data -o data.csv`
+* `$ python -m pip scrapy crawl data -o data.csv`
 
 to collect informations of each links and save as csv
 
 ## Acknowledgements
-* [Scrapy.org](https://docs.scrapy.org/en/latest/intro/tutorial.html)
+* [ScrapyTutorial.org](https://docs.scrapy.org/en/latest/intro/tutorial.html)
