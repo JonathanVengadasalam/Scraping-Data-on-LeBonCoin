@@ -10,7 +10,6 @@ import scrapy
 
 class Data(scrapy.Item):
     # define the fields for your item here like:
-    nom = scrapy.Field()
     prix = scrapy.Field()
     date = scrapy.Field()
     adresse = scrapy.Field()
@@ -21,15 +20,20 @@ class Data(scrapy.Item):
     boite = scrapy.Field()
     kilometrage = scrapy.Field()
     annee = scrapy.Field()
-    mise_en_circulation = scrapy.Field()
+    annee_mois = scrapy.Field()
     puissancef = scrapy.Field()
     puissanced = scrapy.Field()
     place = scrapy.Field()
+    porte = scrapy.Field()
     loalld = scrapy.Field()
     typev = scrapy.Field()
     permis = scrapy.Field()
     description = scrapy.Field()
+    lien = scrapy.Field()
+    pro = scrapy.Field()
+    temps = scrapy.Field()
 
 class Link(scrapy.Item):
     # define the fields for your item here like:
     lien = scrapy.Field()
+    date = scrapy.Field()
