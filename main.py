@@ -47,13 +47,6 @@ def convert_to_string(token):
             res += "," + word
     return res
 
-"""
-stats, freq = dict(), dict()
-s.translate(str.maketrans(string.punctuation,rrr))
-    freq[k] = fq = nltk.FreqDist(v)
-    stats[k] = {'total': len(v), 'unique': len(fq.keys())}
-"""
-
 # manage sets
 
 def csv2list(filename):
