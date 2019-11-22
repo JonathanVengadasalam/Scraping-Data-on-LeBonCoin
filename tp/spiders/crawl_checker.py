@@ -6,8 +6,6 @@ from datetime import datetime
 from datetime import timedelta
 from ..items import Link
 
-MAIN = "https://www.leboncoin.fr"
-MONTHS = {"nov":"11"}
 FOLDER = "C:/Users/Home-PC/Desktop/scrapy/tp/test.csv"
 
 def get_urls(folder):
