@@ -25,12 +25,6 @@ def get_urls(folder):
                 res.append(row["lien"])
     return res
 
-def get_datetime(dt):
-    st = dt.split()
-    date = st[0].split("/")
-    time = st[2].split("h")
-    return date[2] + "/" + date[1] + "/" + date[0] + "/" + time[0] + "/" + time[1]
-
 class DataSpider(scrapy.Spider):
     name = "data"
 
@@ -57,8 +51,7 @@ class DataSpider(scrapy.Spider):
             if res != " ": sttmp += res + chr (9774)
         item["adresse"] = sttmp
 
-        if response.xpath("//div[@class='_8rhn3']/span/text()").get() is not None:
-            item["pro"] = 1
+        item["pro"] = 1 if response.xpath("//div[@class='_8rhn3']/span/text()").get() is not None else 0
 
         item["temps"] = 0
         
