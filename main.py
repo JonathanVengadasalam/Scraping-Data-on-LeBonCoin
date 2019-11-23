@@ -5,7 +5,7 @@ from datetime import datetime
 from collections import defaultdict
 from nltk.stem.snowball import FrenchStemmer
 
-ITEM_HEADERS = ["prix","marque","modele","date","annee","kilometrage","carburant","boite","temps",\
+ITEM_HEADERS = ["prix","marque","modele","date","annee","kilometrage","carburant","boite","pro",\
         "puissancef","place","couleur","adresse","loalld","typev","permis","annee_mois","puissanced","porte",\
         "lien","description","temps"]
 CORPORA_HEADERS = ["date","lien","description"]
@@ -58,14 +58,16 @@ def csv2list(filename):
     return res
 
 def list2csv(rows, filename, headers, mode='a'):
-    with open(filename,mode='w',encoding='utf-8') as file:
+    with open(filename,newline="",mode=mode,encoding='utf-8') as file:
         data = csv.DictWriter(file,fieldnames=headers)
         if mode == 'w': data.writeheader()
         data.writerows(rows)
 
-def list2dict(rows, dc):
+def list2dict(rows):
+    res = {}
     for row in rows:
-        dc[build_key(row)] = 0
+        res[build_key(row)] = 0
+    return res
 
 def inter_n_diff(dc, rows):
     inter, diff = [], []
@@ -79,8 +81,10 @@ def inter_n_diff(dc, rows):
 # manage temps
 
 def get_datetime(dt):
-    st = dt.split("/")
-    return datetime(int(st[0]),int(st[1]),int(st[2]),int(st[3]),int(st[4]))
+    st = dt.split()
+    date = st[0].split("/")
+    time = st[2].split("h")
+    return datetime(int(date[2]),int(date[1]),int(date[0]),int(time[0]),int(time[1]))
 
 def update_temps(row):
     time = datetime.now() - get_datetime(row["date"])
