@@ -18,10 +18,10 @@ class LinkSpider(scrapy.Spider):
             item["lien"] = MAIN + res.xpath("./a/@href").extract_first()
             item["date"] = clean_date(res.xpath(".//p[@class='mAnae']/@content").extract_first())
             yield item
-        
+        """
         next_page = response.xpath("//ul[@class='_25feg']/li[last()]/a/@href").get()
         if next_page is not None:
-            yield response.follow(next_page, self.parse)
+            yield response.follow(next_page, self.parse)"""
 
 def clean_date(stdate):
     date, time = stdate.split(", ")
